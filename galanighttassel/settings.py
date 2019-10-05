@@ -21,9 +21,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-#SECRET_KEY = '=ysu8%e=4vk=xcg9@z@wr4@ncw9&96x^_7#gz+4jd=_yipw0an'
+SECRET_KEY = '=ysu8%e=4vk=xcg9@z@wr4@ncw9&96x^_7#gz+4jd=_yipw0an'
 
-SECRET_KEY=os.environ.get('SECRET_KEY')
+#SECRET_KEY=os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -124,8 +124,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
-
+if DEBUG:
+   STATICFILES_DIRS = [
+   os.path.join(BASE_DIR, 'static'),
+   ]
+else:
+   STATIC_ROOT = os.path.join(BASE_DIR,'static')
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
