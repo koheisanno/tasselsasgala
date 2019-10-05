@@ -1,0 +1,22 @@
+{% extends "event/base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block mycss %}
+    <link rel="stylesheet" type="text/css" href="{% static 'event/eventmain.css' %}">
+{% endblock mycss %}
+{% block top %}
+    <img src="{% static 'event/tassel_logo_brown.png' %}" class='img-responsive' id='top'>
+{% endblock top %}
+{% block content %}
+<div id="other_content">
+    <p>{{ the_user.email }}</p>
+    <p>{{ the_user.first_Name }} {{ the_user.last_Name }}</p>
+    <p>number of guests: {{ the_user.number_of_Guests }}</p>
+    <div>
+        <form method ='POST'>
+            {% csrf_token %}
+            <input type='submit' value='Confirm Attendence'>
+        </form>
+    </div>
+</div>
+{% endblock content%}

@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>TASSEL Gala</title>
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" href="{% static 'event/eventmain.css' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:600&display=swap" rel="stylesheet">
+  {% block mycss %} {% endblock mycss %}
+  {% block script %} {% endblock script %}
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $(".not-selected").hover(function(){
+        $(this).css({'background': 'rgb(58, 5, 5)'});
+        $('#not-current').css({'color': 'rgb(252, 247, 249)'});
+        }, function(){
+        $(this).css({'background': 'transparent'});
+        $('#not-current').css({'color': 'rgb(58, 5, 5)'});
+      });
+    });    
+  </script>
+</head>
+
+<body>
+  <div id="header">
+      <div id="head">
+          {% block top %}
+          {% endblock top %}
+      </div>
+  </div>
+  {% block content %}
+  {% endblock content %}
+  <div id="site_content">
+    {% block homecontent %}
+    {% endblock homecontent %}
+  </div>
+  <div id="footer">
+  </div>
+</body>
+</html>

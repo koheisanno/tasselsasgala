@@ -1,0 +1,69 @@
+{% extends "event/base.html" %}
+{% load static %}
+{% block mycss %}
+    <link rel="stylesheet" type="text/css" href="{% static 'event/eventmain.css' %}">
+{% endblock mycss %}
+{% block top %}
+<div class='title' id='midmobiletitle'>
+    <h1>TASSEL Gala 2019</h1>
+    <h4>Hosted by TASSEL SAS Chapter</h4>
+</div>
+<div id='photo'>
+    <img src="{% static 'event/tasselfinal.jpg' %}" class='img-responsive'>
+    <div id="centered">
+        <h1>TASSEL Gala 2019</h1>
+        <a href="{% url 'buy' %}" class='button' id='button1'>Purchase a Ticket</a>
+    </div>
+</div>
+    <img src="{% static 'event/tassel_logo.png' %}" class='img-responsive' id='top'>
+    <ul id="menu">
+        <li class="selected"><a href="{% url 'event-home' %}" id='current'>Home</a></li>
+        <li class='not-selected'><a href="{% url 'buy' %}" id='not-current'>Tickets</a></li>
+    </ul>
+{% endblock top %}
+{% block content %}
+<div id="home_content">
+    <div id='boxcontain'>
+        <ul id='boxes'>
+            <li class='box details'>
+                <h4>Date</h4>
+                <h1><strong>Nov 17, 2019</strong></h1>
+                <h1><strong>6pm - 9pm</strong></h1>
+            </li>
+            <li class='box details'>
+                <h4>Hosted by</h4>
+                <h1><strong>TASSEL</strong></h1>
+                <h1><strong>SAS Chapter</strong></h1>
+            </li>
+        </ul>
+    </div>
+</div>
+{% endblock content %}
+{% block homecontent %}
+<a href="{% url 'buy' %}" class='button' id='button2'>Purchase a Ticket</a>
+<div id='detail'>
+    <h4>Date</h4>
+    <h3>November 17th, 2019</h3>
+    <h3>6pm-9pm</h3>
+</div>
+<div id='image_text'>
+    <img src="{% static 'event/tassel_content.jpg' %}" class='img-responsive' id='img_side'>
+    <div id='image-side'>
+        <h2>Theme:</h2>
+        <h1>Start a New Chapter</h1>
+        <h3>Theme:</h3>
+        <h4>Start a New Chapter</h4>
+    </div>
+</div>
+<div id='image-txt'>
+    <h3>Theme:</h3>
+    <h4>Start a New Chapter</h4>
+</div>
+<div id="side">
+    <h2><strong>
+        Join Us for an Evening Supporting Our Next Community Leader</strong></h2>
+    </div>
+    <div id='para'>
+    <p>I'm a paragraph. Click here to add test123 own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. I’m a great place for you to tell a story and let your users know a little more about you.</p>
+</div>
+{% endblock homecontent %}

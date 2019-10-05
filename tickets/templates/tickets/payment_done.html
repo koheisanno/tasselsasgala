@@ -1,0 +1,42 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>TASSEL Gala</title>
+        <meta name="description" content="website description" />
+        <meta name="keywords" content="website keywords, website keywords" />
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{% static 'event/tickets.css' %}">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:600&display=swap" rel="stylesheet">
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+            $(".not-selected").hover(function(){
+                $(this).css({'background': 'rgb(58, 5, 5)'});
+                $('#not-current').css({'color': 'rgb(252, 247, 249)'});
+                }, function(){
+                $(this).css({'background': 'transparent'});
+                $('#not-current').css({'color': 'rgb(58, 5, 5)'});
+            });
+            });    
+        </script>
+    </head>
+    <body>
+        <a href="{% url 'event-home' %}"><img src="{% static 'event/tassel_logo_brown.png' %}" id='top-2'></a>
+        <div id="header">
+            <a href="{% url 'event-home' %}"><img src="{% static 'event/tassel_logo_brown.png' %}" class='img-responsive' id='top'></a>
+            <ul id="menu">
+                <li class="not-selected"><a href="{% url 'event-home' %}" id='not-current'>Home</a></li>
+                <li class='selected'><a href="{% url 'buy' %}" id='current'>Tickets</a></li>
+            </ul>
+        </div>
+        <div id="site_content">
+            <h1>Payment Successful</h1>
+            <h2>An email has been sent to confirm your purchase for our service event.</h2>
+        </div>
+        <div id="footer">
+        </div>
+    </body>
+</html>
