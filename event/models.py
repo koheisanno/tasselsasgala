@@ -33,5 +33,5 @@ class Person(models.Model):
 
         blob = BytesIO()
         canvas.save(blob, 'JPEG')
-        self.qr_image.save('qr-' + self.first_Name + '.jpg', File(blob), save=False)
+        self.qr_image.save('qr-' + str(self.userid) + '.jpg', File(blob), save=False)
         super().save(*args, **kwargs)

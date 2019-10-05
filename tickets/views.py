@@ -29,7 +29,7 @@ def payment_done(request):
     msg.body = 'Dear ' + name +", \n \n Thank you for your interest in our gala night! On the day of the event, please bring the attached QR code – it can be digital or printed. We sincerely appreciate your support and look forward to seeing you there! \n \nSincerely,\nTASSEL SAS Chapter Team" 
     msg.from_email = "tasselsas@gmail.com"
     msg.to = [the_user.email]
-    msg.attach_file("media/qrcodes/qr-"+the_user.first_Name+".jpg")
+    msg.attach_file("media/qrcodes/qr-"+str(the_user.userid)+".jpg")
     msg.send()
     return render(request, 'tickets/payment_done.html')
 
