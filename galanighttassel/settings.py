@@ -142,3 +142,5 @@ MEDIA_URL = '/media/'
 
 PAYPAL_RECEIVER_EMAIL='testingdjango@business.com'
 PAYPAL_TEST= True
+
+django_heroku.settings(locals())
