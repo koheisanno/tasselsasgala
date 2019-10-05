@@ -26,7 +26,7 @@ class Person(models.Model):
         return (self.first_Name + " " + self.last_Name + " " + str(self.userid))
     
     def save(self, *args, **kwargs):
-        self.url_link = "http://127.0.0.1:8000/" + str(self.userid)
+        self.url_link = "https://tasselgala2019.herokuapp.com/" + str(self.userid)
         img = qrcode.make(self.url_link)
         canvas = Image.new('RGB', (410, 410), 'white')
         canvas.paste(img)
