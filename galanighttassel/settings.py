@@ -28,7 +28,7 @@ SECRET_KEY = '=ysu8%e=4vk=xcg9@z@wr4@ncw9&96x^_7#gz+4jd=_yipw0an'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['gala-night-tassel.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['tasselgala2019.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
