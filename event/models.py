@@ -15,7 +15,7 @@ class Person(models.Model):
     userid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=True)
     first_Name = models.CharField(default=" ", max_length=50)
     last_Name = models.CharField(default=" ", max_length=50)
-    email = models.EmailField(default="example@gmail.com")
+    email = models.EmailField()
     number_of_Guests = models.PositiveIntegerField(default=0)
     url_link = models.CharField(default=' ', max_length=200)
     qr_image = models.ImageField(upload_to='qrcodes', default='default.jpg', blank=True, null=True)
@@ -28,7 +28,7 @@ class Person(models.Model):
     def save(self, *args, **kwargs):
         self.url_link = "https://tasselgala2019.herokuapp.com/" + str(self.userid)
         img = qrcode.make(self.url_link)
-        canvas = Image.new('RGB', (410, 410), 'white')
+        canvas = Image.new('RGB', (500, 500), 'white')
         canvas.paste(img)
 
         blob = BytesIO()
