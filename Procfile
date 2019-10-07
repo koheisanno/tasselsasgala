@@ -1,1 +1,1 @@
-web: gunicorn galanight.wsgi
+web: gunicorn galanighttassel.wsgi
