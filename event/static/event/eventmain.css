@@ -282,25 +282,6 @@ ul#menu li:hover
   float:right;
 }
 
-#footer
-{ width: 898px;
-  font: normal 100% 'lucida sans unicode', arial, sans-serif;
-  height: 33px;
-  padding: 24px 0 5px 0;
-  text-align: center; 
-  background: transparent;
-  color: #000;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;}
-
-#footer a
-{ color: #000;
-  text-decoration: none;}
-
-#footer a:hover
-{ color: #000;
-  text-decoration: underline;}
-
 #colours
 { height: 0px;
   text-align: right;
