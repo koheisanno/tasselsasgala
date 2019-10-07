@@ -12,7 +12,10 @@ body
 { 
   font-family: 'Montserrat', sans-serif;
   background: rgb(252, 247, 248);
-  color: rgb(58, 5, 5);}
+  color: rgb(58, 5, 5);
+  width: 100%;
+  overflow-x: hidden;
+}
 
 p
 { padding: 0 0 20px 0;
@@ -342,6 +345,10 @@ ul#menu li:hover
 #detail h3{
   color:rgb(242, 59, 59);
 }
+#midmobiletitle {
+    display:block;
+    width: 100%;
+  }
 
 @media screen and (min-width: 1150px) {
   #photo {
@@ -382,6 +389,7 @@ ul#menu li:hover
 @media screen and (max-width: 1280px) and (min-width: 700px){
   #midmobiletitle {
     display:block;
+    text-align: left;
     margin-left: 10%;
   }
   #photo {
@@ -390,6 +398,7 @@ ul#menu li:hover
   #centered
   {
     display:none;
+    text-align: left;
   }
   #boxes{
     display:block;
@@ -402,9 +411,6 @@ ul#menu li:hover
   }
   #top{
     display:none;
-  }
-  .title{
-    text-align: left;
   }
   #img_side{
     height: 220px;
