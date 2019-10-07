@@ -44,7 +44,7 @@ def payment_canceled(request):
     return render(request, 'tickets/payment_canceled.html')
 
 def payment_process(request):
-    firstname = request.session.get('first_Name')
+    '''firstname = request.session.get('first_Name')
     lastname = request.session.get('last_Name')
     e_mail = request.session.get('email')
     num_of_guests = request.session.get('number_of_Guests')
@@ -64,7 +64,8 @@ def payment_process(request):
         'cancel_return': 'http://{}{}'.format(host, reverse('payment_canceled')),
     }
     form = PayPalPaymentsForm(initial=paypal_dict)
-    return render(request, 'tickets/payment_process.html', {'form': form})
+    return render(request, 'tickets/payment_process.html', {'form': form})'''
+    return render(request, 'tickets/payment_process.html')
 
 def buy(request):
     if request.method=='POST':
