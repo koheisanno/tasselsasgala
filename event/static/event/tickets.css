@@ -204,24 +204,29 @@ ul#menu li:hover
   margin: 0 auto 0 auto;
 }
 
-#footer
-{ width: 898px;
-  font: normal 100% 'lucida sans unicode', arial, sans-serif;
-  height: 33px;
-  padding: 24px 0 5px 0;
-  text-align: center; 
-  background: transparent;
-  color: #000;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;}
+#footer{
+  width: 100%;
+  height: 150px;
+  background: rgb(215, 193, 197);
+}
 
-#footer a
-{ color: #000;
-  text-decoration: none;}
+#footercontent{
+  width: 70%;
+  margin: 0 auto;
 
-#footer a:hover
-{ color: #000;
-  text-decoration: underline;}
+}
+#footercontent img{
+  width: 20%;
+  margin-top: 45px;
+  margin-left: 30px;
+  float:left;
+}
+#footercontent h3{
+  float:right;
+  display: block;
+  width: 60%;
+  margin-top: 25px;
+}
 
 @media screen and (min-width: 1150px) {
   #photo {
