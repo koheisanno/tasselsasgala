@@ -357,6 +357,9 @@ ul#menu li:hover
   width: 60%;
   margin-top: 25px;
 }
+.para a {
+  color: rgb(242, 59, 59);
+}
 @media screen and (min-width: 1150px) {
   #photo {
     top:0px;
