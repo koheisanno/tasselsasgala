@@ -228,6 +228,10 @@ ul#menu li:hover
   margin-top: 25px;
 }
 
+body{
+  min-height: 200px;
+}
+
 @media screen and (min-width: 1150px) {
   #photo {
     top:0px;
