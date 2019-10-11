@@ -16,7 +16,7 @@ from django.views.decorators.csrf import csrf_exempt
 
 @csrf_exempt
 def payment_done(request):
-    firstname = request.session.get('first_Name')
+    '''firstname = request.session.get('first_Name')
     lastname = request.session.get('last_Name')
     e_mail = request.session.get('email')
     num_of_Guests = request.session.get('number_of_Guests')
@@ -30,7 +30,7 @@ def payment_done(request):
     msg.from_email = "tasselsas@gmail.com"
     msg.to = [the_user.email]
     msg.attach_file("media/qrcodes/qr-"+str(the_user.userid)+".jpg")
-    msg.send()
+    msg.send()'''
     return render(request, 'tickets/payment_done.html')
 
 @csrf_exempt
