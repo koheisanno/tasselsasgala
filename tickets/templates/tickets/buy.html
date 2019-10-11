@@ -39,7 +39,7 @@
                     <form method ='POST'>
                         {% csrf_token %}
                         {{form|crispy}}
-                        <h4 id='warning'>NOTE: After completing the payment with paypal, please wait a few seconds until the browser redirects back to this website. If not, there is a chance that the your confirmation email with the QR code ticket will not get sent.</h4>
+                        <h4 id='warning'>After completing payment, more information regarding the gala will be sent to your email on the Friday after you purchase your ticket. In the meantime, kindly check your email to ensure that a payment confirmation email has been sent to you.</h4>
                         <input type='submit' value='Proceed to payment'>
                     </form>
                 </div>
