@@ -191,7 +191,7 @@ ul#menu li:hover
   overflow: hidden;
   margin: 0 auto 0 auto;
   display: block;
-  min-height: 300px;
+  min-height: 500px;
 } 
 #home_content
 { width: 100%;
