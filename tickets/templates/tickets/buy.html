@@ -39,7 +39,7 @@
                     <form method ='POST'>
                         {% csrf_token %}
                         {{form|crispy}}
-                        <h4 id='warning'>After completing payment, more information regarding the gala will be sent to your email on the Friday after you purchase your ticket. In the meantime, kindly check your email to ensure that a payment confirmation email has been sent to you.</h4>
+                        <p id='warning'>After completing payment, more information regarding the gala will be sent to your email on the Friday after you purchase your ticket. In the meantime, kindly check your email to ensure that a payment confirmation email has been sent to you.</p>
                         <input type='submit' value='Proceed to payment'>
                     </form>
                 </div>
