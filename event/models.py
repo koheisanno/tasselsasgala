@@ -20,7 +20,7 @@ class Person(models.Model):
     url_link = models.CharField(default=' ', max_length=200)
     qr_image = models.ImageField(upload_to='qrcodes', default='default.jpg', blank=True, null=True)
     attended = models.BooleanField(default = False, choices=BOOL_CHOICES)
-    payment_complete = models.BooleanField(default = False, choices=BOOL_CHOICES_PAYMENT)
+    #payment_complete = models.BooleanField(default = False, choices=BOOL_CHOICES_PAYMENT)
 
     def __str__(self):
         return (self.first_Name + " " + self.last_Name + " " + str(self.userid))
