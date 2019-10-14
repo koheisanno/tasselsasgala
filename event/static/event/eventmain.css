@@ -521,7 +521,8 @@ ul#menu li:hover
     width: 100%;
   }
   #footercontent img{
-    width: 150px;
+    width: 100px;
+    margin-left: 20px;
   }
   #footercontent h3{
     float:right;
