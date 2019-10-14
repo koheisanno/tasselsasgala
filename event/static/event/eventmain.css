@@ -147,20 +147,14 @@ a.button:hover{
   color: rgb(255, 255, 255);
 }
 
-#centered h1{
+#bigtitle{
   font-size: 90px;
   color: rgb(255, 255, 255);
 }
 
-#centered h4{
-  font-size: 35px;
-  color: black;
-}
-
 #boxcontain{
   width: 100%;
-  height: 180px;
-  z-index: 9;
+  height: 40px;
   text-align: center;
 }
 
@@ -174,9 +168,8 @@ a.button:hover{
 
 .box li{
   display: inline-block;
-  padding: 0 70px;
-  width: 300px;
   text-align: center;
+  color: rgb(255, 255, 255);  
 }
 #main{
   width:100%;
@@ -192,7 +185,6 @@ a.button:hover{
 }
 .box{
   display: inline-block;
-  width: 420px;
 }
 #header
 { background: transparent;
@@ -217,7 +209,8 @@ ul#menu li
 }
 
 .details{
-  background: rgb(23, 23, 23);
+  background: transparent;
+  padding-right: 80px;
 }
 
 ul#menu li a
@@ -232,12 +225,9 @@ ul#menu li a
   text-decoration: none;
   background: transparent;} 
 
-.box h5{
-  text-transform: lowercase;
-  text-decoration: none;
-}
 .box h1{
   font-size: 45px;
+  color: rgb(255, 255, 255);
 }
 
 ul#menu li:hover
@@ -275,7 +265,7 @@ ul#menu li:hover
 }
 
 .info{
-  margin-top: 100px;
+  margin-top: 60px;
   float:left;
   width: 100%;
 }
@@ -349,9 +339,7 @@ ul#menu li:hover
 #detail{
   width:100%;
 }
-#detail h3{
-  color:white;
-}
+
 #midmobiletitle {
     display:block;
     width: 100%;
