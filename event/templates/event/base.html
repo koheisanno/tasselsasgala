@@ -19,10 +19,10 @@
     $(document).ready(function(){
       $(".not-selected").hover(function(){
         $(this).css({'background': 'rgb(255, 255, 255)'});
-        $('#not-current').css({'color': 'black'});
+        $('.not-current', this).css({'color': 'black'});
         }, function(){
         $(this).css({'background': 'transparent'});
-        $('#not-current').css({'color': 'rgb(255, 255, 255)'});
+        $('.not-current', this).css({'color': 'rgb(255, 255, 255)'});
       });
     });    
   </script>

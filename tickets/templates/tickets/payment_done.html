@@ -12,14 +12,14 @@
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script type="text/javascript">
             $(document).ready(function(){
-            $(".not-selected").hover(function(){
-                $(this).css({'background': 'rgb(58, 5, 5)'});
-                $('#not-current').css({'color': 'rgb(252, 247, 249)'});
-                }, function(){
-                $(this).css({'background': 'transparent'});
-                $('#not-current').css({'color': 'rgb(58, 5, 5)'});
-            });
-            });    
+                $(".not-selected").hover(function(){
+                    $(this).css({'background': 'rgb(255, 255, 255)'});
+                    $('.not-current', this).css({'color': 'black'});
+                    }, function(){
+                    $(this).css({'background': 'transparent'});
+                    $('.not-current', this).css({'color': 'rgb(255, 255, 255)'});
+                });
+            });       
         </script>
     </head>
     <body>
@@ -27,8 +27,9 @@
         <div id="header">
             <a href="{% url 'event-home' %}"><img src="{% static 'event/tassel_logo_brown.png' %}" class='img-responsive' id='top'></a>
             <ul id="menu">
-                <li class="not-selected"><a href="{% url 'event-home' %}" id='not-current'>Home</a></li>
+                <li class="not-selected"><a href="{% url 'event-home' %}" class='not-current'>Home</a></li>
                 <li class='selected'><a href="{% url 'buy' %}" id='current'>Tickets</a></li>
+                <li class='not-selected'><a href="https://www.tasselcambodia.com/donation" target="_blank" class='not-current'>Donate</a></li>
             </ul>
         </div>
         <div id="site_content">

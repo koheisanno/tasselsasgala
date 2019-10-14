@@ -12,7 +12,7 @@ html
 body
 { 
   font-family: 'PT Sans Narrow', sans-serif;  
-  background: rgb(23, 23, 23);
+  background: rgb(31, 31, 31);
   color: rgb(255, 255, 255);
   width: 100%;
   overflow-x: hidden;
@@ -24,7 +24,7 @@ p
   font-size: 18px;
 }
 
-#not-current {
+.not-current {
   color: rgb(255, 255, 255);
 }
 
@@ -91,7 +91,7 @@ a:hover
 { width: 100%;
   float: right;
   text-align: center;
-  background-color: rgb(23, 23, 23);
+  background-color: rgb(31, 31, 31);
 }
 #top{
   position: absolute;
@@ -105,7 +105,6 @@ a:hover
   background-color: black;
   float:right;
   position: relative;
-  top:0px;
   color:rgb(255, 255, 255);
 }
 
@@ -138,7 +137,7 @@ a.button:hover{
 #centered{
   position: absolute;
   font-weight: 1000;
-  bottom:210px;
+  bottom:40px;
   left: 6%;
   text-align: left;
 }
@@ -151,26 +150,6 @@ a.button:hover{
   font-size: 90px;
   color: rgb(255, 255, 255);
 }
-
-#boxcontain{
-  width: 100%;
-  height: 40px;
-  text-align: center;
-}
-
-#boxes{
-  list-style-type: none;
-  padding: 0;
-  color: rgb(255, 255, 255);
-  width: 100%;
-  transition: top 0.2s;
-}
-
-.box li{
-  display: inline-block;
-  text-align: center;
-  color: rgb(255, 255, 255);  
-}
 #main{
   width:100%;
 }
@@ -182,9 +161,6 @@ a.button:hover{
   width: 80%;
   margin: 50px auto 0;
   text-align: center;
-}
-.box{
-  display: inline-block;
 }
 #header
 { background: transparent;
@@ -208,11 +184,6 @@ ul#menu li
 { list-style: none;
 }
 
-.details{
-  background: transparent;
-  padding-right: 80px;
-}
-
 ul#menu li a
 { letter-spacing: 0.1em;
   font-family: 'Montserrat', sans-serif;
@@ -225,10 +196,6 @@ ul#menu li a
   text-decoration: none;
   background: transparent;} 
 
-.box h1{
-  font-size: 45px;
-  color: rgb(255, 255, 255);
-}
 
 ul#menu li:hover
 { color: black;
@@ -299,7 +266,7 @@ ul#menu li:hover
   color: black;
   height: 420px;
   width: 100%;
-  margin: 100px auto 0;
+  margin: 0 auto;
   border-radius: 10px;
 }
 #image_text h1{
@@ -323,7 +290,7 @@ ul#menu li:hover
   display: none;
 }
 #p1{
-  margin-left: 20px;
+  margin-left: 30px;
   right: 10px;
   top: 40px;
   position: relative;
@@ -357,7 +324,7 @@ ul#menu li:hover
 
 }
 #footercontent img{
-  width: 20%;
+  width: 200px;
   margin-top: 45px;
   margin-left: 40px;
   float:left;
@@ -366,7 +333,7 @@ ul#menu li:hover
   float:right;
   display: block;
   width: 60%;
-  margin-top: 25px;
+  margin-top: 40px;
 }
 .para a {
   color: rgb(242, 59, 59);
@@ -380,12 +347,6 @@ ul#menu li:hover
   }
   #centered
   {
-    display:block;
-  }
-  #boxes{
-    display:block;
-  }
-  #boxcontain{
     display:block;
   }
   #menu{
@@ -403,11 +364,23 @@ ul#menu li:hover
   #image-txt{
     display:none;
   }
+  #footercontent img{
+    width: 200px;
+    margin-top: 45px;
+    margin-left: 40px;
+    float:left;
+  }
+  #footercontent h3{
+    float:right;
+    display: block;
+    width: 60%;
+    margin-top: 40px;
+  }
 }
 
 
 
-@media screen and (max-width: 1280px) and (min-width: 850px){
+@media screen and (max-width: 1280px) and (min-width: 880px){
   #midmobiletitle {
     display:block;
     text-align: left;
@@ -420,12 +393,6 @@ ul#menu li:hover
   {
     display:none;
     text-align: left;
-  }
-  #boxes{
-    display:block;
-  }
-  #boxcontain{
-    display:block;
   }
   #menu{
     display:block;
@@ -481,17 +448,29 @@ ul#menu li:hover
   #image-txt{ 
     display: none;
   }
-  #para
+  .para
   {
     width: 55%;
-    padding: 115px 0 15px 0;
+    padding: 5px 0 15px 0;
   }
-  #side{
+  .side{
     width: 40%;
+  }
+  #footercontent img{
+    width: 200px;
+    margin-top: 45px;
+    margin-left: 40px;
+    float:left;
+  }
+  #footercontent h3{
+    float:right;
+    display: block;
+    width: 60%;
+    margin-top: 40px;
   }
 }
 
-@media screen and (max-width: 850px){
+@media screen and (max-width: 880px){
   #midmobiletitle {
     display:block;
   }
@@ -500,12 +479,6 @@ ul#menu li:hover
   }
   #centered
   {
-    display:none;
-  }
-  #boxes{
-    display:none;
-  }
-  #boxcontain{
     display:none;
   }
   #menu{
@@ -545,15 +518,26 @@ ul#menu li:hover
     top: 20px;
   }
   #image-txt p{
-    margin-right: 18px;
+    margin-right: 12px;
   }
-  #para
+  .para
   {
     width: 100%;
     padding: 10px 0 15px 0;
+    display: block;
   }
-  #side{
+  .side{
     width: 100%;
+  }
+  #footercontent img{
+    width: 150px;
+  }
+  #footercontent h3{
+    float:right;
+    display: block;
+    width: 40%;
+    margin-top: 18px;
+    font-size: 20px;
   }
 }
 
