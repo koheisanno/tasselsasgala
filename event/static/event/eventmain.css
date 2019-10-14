@@ -531,6 +531,11 @@ ul#menu li:hover
     margin-top: 18px;
     font-size: 20px;
   }
+  #footercontent{
+    width: 80%;
+    margin: 0 auto;
+  
+  }
 }
 
 @media
