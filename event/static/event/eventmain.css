@@ -91,7 +91,7 @@ a:hover
 { width: 100%;
   float: right;
   text-align: center;
-  background-color: black;
+  background-color: rgb(23, 23, 23);
 }
 #top{
   position: absolute;
