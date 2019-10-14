@@ -8,7 +8,7 @@ from django.core.files import File
 
 
 BOOL_CHOICES = ((True, 'Attended'), (False, 'Absent'))
-BOOL_CHOICES_PAYMENT = ((True, 'Complete'), (False, 'Incomplete'))
+#BOOL_CHOICES_PAYMENT = ((True, 'Complete'), (False, 'Incomplete'))
 
 
 class Person(models.Model):
