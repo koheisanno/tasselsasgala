@@ -124,9 +124,9 @@ a.button:hover{
 }
 
 #center-form{
-  margin: 0 auto;
+  margin: 15px auto;
   text-align: center;
-  width: 230px;
+  width: 235px;
   display: block;
 }
 
