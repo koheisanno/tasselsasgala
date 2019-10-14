@@ -20,7 +20,9 @@ body
 
 p
 { padding: 0 0 20px 0;
-  line-height: 1.7em;}
+  line-height: 1.7em;
+  font-size: 18px;
+}
 
 #not-current {
   color: rgb(255, 255, 255);
@@ -40,6 +42,7 @@ p
   height: auto;
   float:right;
 }
+
 
 h1, h2, h3, h4, h5, h6 
 {
@@ -125,6 +128,7 @@ a.button {
 }
 #button2{
   margin: 65px 2px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 a.button:hover{
@@ -144,7 +148,7 @@ a.button:hover{
 }
 
 #centered h1{
-  font-size: 75px;
+  font-size: 90px;
   color: rgb(255, 255, 255);
 }
 
@@ -328,11 +332,25 @@ ul#menu li:hover
   position: relative;
   display: none;
 }
+#p1{
+  margin-left: 20px;
+  right: 10px;
+  top: 40px;
+  position: relative;
+  display: block;
+}
+
+#p2{
+  margin-left: 20px;
+  top: 40px;
+  position: relative;
+  display: none;
+}
 #detail{
   width:100%;
 }
 #detail h3{
-  color:rgb(242, 59, 59);
+  color:white;
 }
 #midmobiletitle {
     display:block;
@@ -401,7 +419,7 @@ ul#menu li:hover
 
 
 
-@media screen and (max-width: 1280px) and (min-width: 700px){
+@media screen and (max-width: 1280px) and (min-width: 850px){
   #midmobiletitle {
     display:block;
     text-align: left;
@@ -447,16 +465,23 @@ ul#menu li:hover
     top: 30px;
     display:none;
   }
+  #p1{
+    display:none;
+  }
   #image_text h3{
     margin-left: 20px;
-    top: 30px;
+    top: 20px;
     position: relative;
     display: block;
   }
   #image_text h4{
     margin-left: 20px;
-    top: 30px;
+    top: 20px;
     position: relative;
+    display: block;
+  }
+  #p2{
+    top: 20px;
     display: block;
   }
   #button2{
@@ -478,7 +503,7 @@ ul#menu li:hover
   }
 }
 
-@media screen and (max-width: 750px){
+@media screen and (max-width: 850px){
   #midmobiletitle {
     display:block;
   }
@@ -525,10 +550,14 @@ ul#menu li:hover
   #image-txt{
     min-height: 100px;
     width: 100%;
-    background: rgb(233, 81, 81);
-    color: rgb(252, 247, 249);
+    background: white;
+    color: black;
     padding-left: 20px;
     border-radius: 10px;
+    top: 20px;
+  }
+  #image-txt p{
+    margin-right: 18px;
   }
   #para
   {
