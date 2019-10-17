@@ -128,8 +128,15 @@ a.button {
 #button2{
   margin: 65px 2px;
   font-family: 'Montserrat', sans-serif;
+  width: 45%;
+  float:left;
 }
-
+#button3{
+  margin: 65px 2px;
+  font-family: 'Montserrat', sans-serif;
+  width: 45%;
+  float:right;
+}
 a.button:hover{
   background-color: rgb(240, 237, 239);
 }
@@ -349,6 +356,9 @@ ul#menu li:hover
   #button2{
     display: none;
   }
+  #button3{
+    display: none;
+  }
   #detail{
     display: none;
   }
@@ -433,6 +443,9 @@ ul#menu li:hover
   #button2{
     display: none;
   }
+  #button3{
+    display: none;
+  }
   #detail{
     display: none;
   }
@@ -482,6 +495,9 @@ ul#menu li:hover
     padding-top: 0px;
   }
   #button2{
+    display: block;
+  }
+  #button3{
     display: block;
   }
   #detail{
