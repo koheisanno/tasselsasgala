@@ -124,6 +124,12 @@ a.button {
 #button1{
   margin: 25px 2px;
   font-family: 'Montserrat', sans-serif;
+  width: 200px;
+}
+#button4{
+  margin: 25px 2px;
+  font-family: 'Montserrat', sans-serif;
+  width: 200px;
 }
 #button2{
   margin: 65px 2px;
@@ -144,7 +150,7 @@ a.button:hover{
 #centered{
   position: absolute;
   font-weight: 1000;
-  bottom:40px;
+  bottom:150px;
   left: 6%;
   text-align: left;
 }
