@@ -33,6 +33,6 @@ class Person(models.Model):
         canvas = canvas.resize((300,300), Image.ANTIALIAS)
 
         blob = BytesIO()
-        canvas.save(blob, 'JPEG', quality=15)
+        canvas.save(blob, 'JPEG', quality=35)
         self.qr_image.save('qr-' + str(self.userid) + '.jpg', File(blob), save=False)
         super().save(*args, **kwargs)
