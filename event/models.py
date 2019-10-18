@@ -5,6 +5,8 @@ import qrcode
 from PIL import Image
 from io import BytesIO
 from django.core.files import File
+from django.conf import settings
+import boto
 
 
 BOOL_CHOICES = ((True, 'Attended'), (False, 'Absent'))
@@ -28,10 +30,10 @@ class Person(models.Model):
     def save(self, *args, **kwargs):
         self.url_link = "tasselsasgala.com/" + str(self.userid)
         img = qrcode.make(self.url_link)
-        canvas = Image.new('RGB', (500, 500), 'white')
+        canvas = Image.new('RGB', (400, 400), 'white')
         canvas.paste(img)
-
         blob = BytesIO()
         canvas.save(blob, 'JPEG')
+
         self.qr_image.save('qr-' + str(self.userid) + '.jpg', File(blob), save=False)
         super().save(*args, **kwargs)
