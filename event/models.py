@@ -28,8 +28,9 @@ class Person(models.Model):
     def save(self, *args, **kwargs):
         self.url_link = "tasselsasgala.com/" + str(self.userid)
         img = qrcode.make(self.url_link)
-        canvas = Image.new('RGB', (500, 500), 'white')
+        canvas = Image.new('RGB', (400, 400), 'white')
         canvas.paste(img)
+        canvas = canvas.resize((300,300), Image.ANTIALIAS)
 
         blob = BytesIO()
         canvas.save(blob, 'JPEG')
