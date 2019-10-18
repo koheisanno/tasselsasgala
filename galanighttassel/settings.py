@@ -127,7 +127,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 
-DISABLE_COLLECTSTATIC=1
+#DISABLE_COLLECTSTATIC=1
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
@@ -144,13 +144,13 @@ MEDIA_URL = '/media/'
 PAYPAL_RECEIVER_EMAIL='testingdjango@business.com'
 PAYPAL_TEST= True
 
-#AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
-#AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-#AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
+AWS_ACCESS_KEY_ID=os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY=os.environ.get('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME=os.environ.get('AWS_STORAGE_BUCKET_NAME')
 
-#AWS_S3_FILE_OVERWRITE = False
-#AWS_DEFAULT_ACL= None
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL= None
 
-#DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 django_heroku.settings(locals())
