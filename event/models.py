@@ -5,8 +5,6 @@ import qrcode
 from PIL import Image
 from io import BytesIO
 from django.core.files import File
-from django.conf import settings
-import boto
 
 
 BOOL_CHOICES = ((True, 'Attended'), (False, 'Absent'))
