@@ -270,7 +270,7 @@ ul#menu li:hover
   color: black;
   height: 420px;
   width: 100%;
-  margin: 30px auto 0;
+  margin: 40px auto 0;
   border-radius: 10px;
 }
 #image_text h1{
@@ -417,7 +417,6 @@ ul#menu li:hover
   }
   #image_text h1{
     margin-left: 20px;
-    margin-top: 30px;
     position: relative;
     top: 30px;
     display:none;
@@ -433,18 +432,18 @@ ul#menu li:hover
   }
   #image_text h3{
     margin-left: 20px;
-    top: 20px;
+    top: 10px;
     position: relative;
     display: block;
   }
   #image_text h4{
     margin-left: 20px;
-    top: 20px;
+    top: 10px;
     position: relative;
     display: block;
   }
   #p2{
-    top: 20px;
+    top: 10px;
     display: block;
   }
   #button2{
