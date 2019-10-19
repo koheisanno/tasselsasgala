@@ -9,7 +9,11 @@
     <h4>Hosted by TASSEL SAS Chapter</h4>
 </div>
 <div id='photo'>
-    <img src="{% static 'event/tasselfinal.jpg' %}" class='img-responsive'>
+    <picture>
+        <source srcset="{% static 'event/tasselbannerfinal.webp' %}" type="image/webp" class='img-responsive'>
+        <source srcset="{% static 'event/tasselbannerfinal.jpg' %}" type="image/jpeg" class='img-responsive'> 
+        <img src="{% static 'event/tasselbannerfinal.jpg' %}" class='img-responsive' alt='banner'>
+    </picture>
     <div id="centered">
         <h4>TASSEL SAS Presents:</h4>
         <h1 id='bigtitle'>TASSEL GALA DINNER 2019</h1>
@@ -37,7 +41,13 @@
     <h3>November 17th, 2019 | 6:30PM</h3>
 </div>
 <div id='image_text'>
-    <img src="{% static 'event/tasselcontent.jpg' %}" class='img-responsive' id='img_side'>
+    <div>
+        <picture>
+            <source srcset="{% static 'event/tasselcontentfinal.webp' %}" type="image/webp" class='img-responsive'>
+            <source srcset="{% static 'event/tasselcontentfinal.jpg' %}" type="image/jpeg" class='img-responsive'> 
+            <img src="{% static 'event/tasselcontentfinal.jpg' %}" class='img-responsive' alt='theme' id='img_side'>
+        </picture>
+    </div>
     <div id='image-side'>
         <h2>Theme:</h2>
         <h1>Start a New Chapter</h1>
