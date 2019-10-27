@@ -1,50 +1,14 @@
+{% extends "tickets/contentbase.html" %}
 {% load static %}
 {% load crispy_forms_tags %}
-<!DOCTYPE HTML>
-<html>
-    <head>
-        <title>TASSEL Gala - Payment Canceled</title>
-        <meta name="description" content="payment canceled" />
-        <meta name="keywords" content="website keywords, website keywords" />
-        <meta name='viewport' content='width=device-width, inital-scale=1' />
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="{% static 'event/tickets.css' %}">
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:600&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow&display=swap" rel="stylesheet">
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" async></script>
-        <script type="text/javascript">
-            $(document).ready(function(){
-                $(".not-selected").hover(function(){
-                    $(this).css({'background': 'rgb(255, 255, 255)'});
-                    $('.not-current', this).css({'color': 'black'});
-                    }, function(){
-                    $(this).css({'background': 'transparent'});
-                    $('.not-current', this).css({'color': 'rgb(255, 255, 255)'});
-                });
-            });     
-        </script>
-    </head>
-    <body>
-        <a href="{% url 'event-home' %}"><img src="{% static 'event/tassel_logo.png' %}" id='top-2'></a>
-        <div id="header">
-            <a href="{% url 'event-home' %}"><img src="{% static 'event/tassel_logo.png' %}" class='img-responsive' id='top'></a>
-            <ul id="menu">
-                <li class="not-selected"><a href="{% url 'event-home' %}" class='not-current'>Home</a></li>
-                <li class='selected'><a href="{% url 'buy' %}" id='current'>Tickets</a></li>
-                <li class='not-selected'><a href="https://secure.squarespace.com/checkout/donate?donatePageId=5892759d6a49632fcab4171a&ss_cid=3832ac65-17c9-417a-a7fd-9667bda7ae65&ss_cvisit=1571044001046&ss_cvr=0a3546fe-4328-4da5-96a8-9b287e8adc88%7C1571044000888%7C1571044000888%7C1571044000888%7C1" target="_blank" class='not-current'>Donate</a></li>
-            </ul>
-        </div>
-        <div id="site_content">
-            <div id="other_content">
-                h4>Payment Canceled</h4>
-            </div>
-        </div>
-        <div id="footer">
-            <div id='footercontent'>
-                <img src="{% static 'event/tassel_logo.png' %}" class='img-responsive'>
-                <h3>For any questions or enquiries, contact tasselsas@gmail.com</h3>
-            </div>
-        </div>
-    </body>
-</html>
+{% block menu %}
+<li class="not-selected"><a href="{% url 'event-home' %}" class='not-current'>Home</a></li>
+<li class='selected'><a href="{% url 'buy' %}" id='current'>Tickets</a></li>
+<li class='not-selected'><a href="https://secure.squarespace.com/checkout/donate?donatePageId=5892759d6a49632fcab4171a&ss_cid=3832ac65-17c9-417a-a7fd-9667bda7ae65&ss_cvisit=1571044001046&ss_cvr=0a3546fe-4328-4da5-96a8-9b287e8adc88%7C1571044000888%7C1571044000888%7C1571044000888%7C1" target="_blank" class='not-current'>Donate</a></li>
+{% endblock menu %}
+
+{% block content %}
+<div id="other_content">
+    <h4>The payment has been canceled.</h4>
+</div>
+{% endblock content %}

@@ -226,6 +226,12 @@ ul#menu li:hover
   width: 60%;
   margin-top: 40px;
 }
+#number{
+  display:none;
+}
+#amount{
+  display:block;
+}
 
 @media screen and (min-width: 1150px) {
   #photo {

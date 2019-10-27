@@ -17,15 +17,18 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls import url
 from tickets import views as tickets_views
+from donate import views as donate_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^paypal/', include('paypal.standard.ipn.urls')),
+    url(r'^donate/$', donate_views.donation, name='donation' ),
+    url(r'^donate_process/$', donate_views.donation_process, name='donation_process' ),
     url(r'^payment_process/$', tickets_views.payment_process, name='payment_process' ),
-    url(r'^payment_done/$', tickets_views.payment_done, name='payment_done'),
-    url(r'^payment_canceled/$', tickets_views.payment_canceled, name='payment_canceled'),
+    url(r'^donate_done/$', donate_views.donation_done, name='donation_done'),
+    url(r'^donate_canceled/$', donate_views.donation_canceled, name='donation_canceled'),
     path('', include('event.urls')),
     path('tickets/', tickets_views.buy, name="buy"),
-    path('thankyou/', tickets_views.thankyou, name='thankyou'),
-    path('<str:userid>/', tickets_views.profile, name='profile'),
+    #path('thankyou/', tickets_views.thankyou, name='thankyou'),
+    #path('<str:userid>/', tickets_views.profile, name='profile'),
 ]
