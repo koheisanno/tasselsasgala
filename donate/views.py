@@ -154,7 +154,7 @@ def donation_process(request):
     donationnum = request.session.get('donation_num')
     donationamount = request.session.get('donation_amount')
     donation_id = request.session.get('donation_id')
-  #  donation = Donation.objects.get(pk=donation_id)
+    donation = Donation.objects.get(pk=donation_id)
     host = request.get_host()
     paypal_dict = {
             'business': settings.PAYPAL_RECEIVER_EMAIL,
@@ -167,24 +167,24 @@ def donation_process(request):
             'cancel_return': 'http://{}{}'.format(host, reverse('donation_canceled')),
         }
     if donationtype == 'item1':
-     #   donation.your_donation = donationnum*75
-     #   donation.save()
+        donation.your_donation = donationnum*75
+        donation.save()
         paypal_dict['amount']=donationnum*75
     elif donationtype == 'item2':
-     #   donation.your_donation = donationnum*100
-     #   donation.save()
+        donation.your_donation = donationnum*100
+        donation.save()
         paypal_dict['amount']=donationnum*100
     elif donationtype == 'item3':
-     #   donation.your_donation = donationnum*125
-      #  donation.save()
+        donation.your_donation = donationnum*125
+        donation.save()
         paypal_dict['amount']=donationnum*125
     elif donationtype == 'item4':
-     #   donation.your_donation = donationnum*150
-     #   donation.save()
+        donation.your_donation = donationnum*150
+        donation.save()
         paypal_dict['amount']=donationnum*150
     elif donationtype == 'general':
-     #   donation.your_donation = donationamount
-     #   donation.save()
+        donation.your_donation = donationamount
+        donation.save()
         paypal_dict['amount']=donationamount
     form = PayPalPaymentsForm(initial=paypal_dict)
     return render(request, 'donate/donation_process.html', {'form': form})
