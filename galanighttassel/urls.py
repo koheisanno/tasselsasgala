@@ -22,8 +22,8 @@ from donate import views as donate_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^paypal/', include('paypal.standard.ipn.urls')),
-    #url(r'^donate/$', donate_views.donation, name='donation' ),
-    #url(r'^donate_process/$', donate_views.donation_process, name='donation_process' ),
+    url(r'^donate/$', donate_views.donation, name='donation' ),
+    url(r'^donate_process/$', donate_views.donation_process, name='donation_process' ),
     url(r'^payment_process/$', tickets_views.payment_process, name='payment_process' ),
     url(r'^donate_done/$', donate_views.donation_done, name='donation_done'),
     url(r'^donate_canceled/$', donate_views.donation_canceled, name='donation_canceled'),
