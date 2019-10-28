@@ -7,7 +7,7 @@ class Donation(models.Model):
     last_Name = models.CharField(default=" ", max_length=50)
     email = models.EmailField()
     donation_type = models.CharField(default='general', max_length=50, choices=DONATION_TYPE)
-    number = models.PositiveIntegerField(choices=INT_CHOICES, default=1)
+    number_of_items = models.PositiveIntegerField(choices=INT_CHOICES, default=1)
     your_donation = models.PositiveIntegerField(null=True, blank=True, default=0)
 
     def __str__(self):
