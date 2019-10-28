@@ -36,7 +36,7 @@
                         $('#cost h3').html("Your donation: $" + amount + ".00");
                     }
                     else if (donations=='item1'){
-                        var number=$("#id_number_of_items").val();
+                        var number=$("#id_number").val();
                         $('#number').css({'display': 'block'});
                         $('#amount').css({'display': 'none'});
                         $('#item1').css({'display': 'block'});
@@ -47,7 +47,7 @@
                         $('#cost h3').html("Your donation: $" + number*75 + ".00");
                     }
                     else if (donations=='item2'){
-                        var number=$("#id_number_of_items").val();
+                        var number=$("#id_number").val();
                         $('#number').css({'display': 'block'});
                         $('#amount').css({'display': 'none'});
                         $('#item1').css({'display': 'none'});
@@ -58,7 +58,7 @@
                         $('#cost h3').html("Your donation: $" + number*100 + ".00");
                     }
                     else if (donations=='item3'){
-                        var number=$("#id_number_of_items").val();
+                        var number=$("#id_number").val();
                         $('#number').css({'display': 'block'});
                         $('#amount').css({'display': 'none'});
                         $('#item1').css({'display': 'none'});
@@ -69,7 +69,7 @@
                         $('#cost h3').html("Your donation: $" + number*125 + ".00");
                     }
                     else if (donations=='item4'){
-                        var number=$("#id_number_of_items").val();
+                        var number=$("#id_number").val();
                         $('#number').css({'display': 'block'});
                         $('#amount').css({'display': 'none'});
                         $('#item1').css({'display': 'none'});
@@ -84,7 +84,7 @@
                     var amount=$(this).val();
                     $('#cost h3').html("Your donation: $" + amount + ".00");
                 });
-                $("#id_number_of_items").on('change', function() {
+                $("#id_number").on('change', function() {
                     var donations=$("#id_donation_type").val();
                     var number=$(this).val();
                     if (donations=='item1'){
@@ -141,7 +141,7 @@
                     <h3>Your donation will be used for whatever is needed the most.</h3>
                 </div>
                 <div id='number' class='form'>
-                    {{ form.number_of_items|as_crispy_field }}
+                    {{ form.number|as_crispy_field }}
                 </div>
                 <div id='amount' class='form'>
                     {{ form.your_donation|as_crispy_field }}
