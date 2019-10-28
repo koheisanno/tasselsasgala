@@ -1,6 +1,9 @@
 {% extends "tickets/contentbase.html" %}
 {% load static %}
 {% load crispy_forms_tags %}
+{% block title %}
+<title>TASSEL Gala - Donate</title>
+{% endblock title %}
 {% block menu %}
 <li class="not-selected"><a href="{% url 'event-home' %}" class='not-current'>Home</a></li>
 <li class='not-selected'><a href="{% url 'buy' %}" class='not-current'>Tickets</a></li>
@@ -9,6 +12,6 @@
 
 {% block content %}
 <div id="other_content">
-    <h2>canceled</h2>
+    <h2>The payment has been canceled.</h2>
 </div>
 {% endblock content %}

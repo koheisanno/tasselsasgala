@@ -1,14 +1,14 @@
 from django.db import models
 INT_CHOICES = [(x, x) for x in range(1, 60)]
-DONATION_TYPE = (('general', 'general'), ('item1', 'item1'), ('item2', 'item2'), ('item3', 'item3'), ('item4', 'item4'))
+DONATION_TYPE = (('general', 'general'), ('item1', 'item1 - $75 per ?'), ('item2', 'item 2 - $100 per ?'), ('item3', 'item 3 - $125 per ?'), ('item4', 'item 4 - $150 per ?'))
 
 class Donation(models.Model):
     first_Name = models.CharField(default=" ", max_length=50)
     last_Name = models.CharField(default=" ", max_length=50)
     email = models.EmailField()
     donation_type = models.CharField(default='general', max_length=50, choices=DONATION_TYPE)
-    number = models.PositiveIntegerField(choices=INT_CHOICES, default='1')
-    amount = models.PositiveIntegerField(null=True, blank=True)
+    number_of_items = models.PositiveIntegerField(choices=INT_CHOICES, default='1')
+    your_donation = models.PositiveIntegerField(null=True, blank=True, default='0')
 
     def __str__(self):
         return (self.donation_type + self.first_Name + " " + self.last_Name)

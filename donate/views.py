@@ -13,27 +13,27 @@ def donation_done(request):
     donation = Donation.objects.get(pk=donation_id)
     if donationtype == 'item1':
         DonationCounter = DonationCount.objects.first()
-        DonationCounter.item1 += donation.amount #should be AFTER IT REDIRECTS
-        DonationCounter.general += donation.amount #should be AFTER IT REDIRECTS
+        DonationCounter.item1 += donation.your_donation #should be AFTER IT REDIRECTS
+        DonationCounter.general += donation.your_donation #should be AFTER IT REDIRECTS
         DonationCounter.save()
     elif donationtype == 'item2':
         DonationCounter = DonationCount.objects.first()
-        DonationCounter.item2 += donation.amount #should be AFTER IT REDIRECTS
-        DonationCounter.general += donation.amount #should be AFTER IT REDIRECTS
+        DonationCounter.item2 += donation.your_donation #should be AFTER IT REDIRECTS
+        DonationCounter.general += donation.your_donation #should be AFTER IT REDIRECTS
         DonationCounter.save()
     elif donationtype == 'item3':
         DonationCounter = DonationCount.objects.first()
-        DonationCounter.item3 += donation.amount #should be AFTER IT REDIRECTS
-        DonationCounter.general += donation.amount
+        DonationCounter.item3 += donation.your_donation #should be AFTER IT REDIRECTS
+        DonationCounter.general += donation.your_donation
         DonationCounter.save()
     elif donationtype == 'item4':
         DonationCounter = DonationCount.objects.first()
-        DonationCounter.item4 += donation.amount #should be AFTER IT REDIRECTS
-        DonationCounter.general += donation.amount
+        DonationCounter.item4 += donation.your_donation #should be AFTER IT REDIRECTS
+        DonationCounter.general += donation.your_donation
         DonationCounter.save()
     elif donationtype == 'general':
         DonationCounter = DonationCount.objects.first()
-        DonationCounter.general += donation.amount #should be AFTER IT REDIRECTS
+        DonationCounter.general += donation.your_donation #should be AFTER IT REDIRECTS
         DonationCounter.save()
     return redirect(reverse('donation'))
 
@@ -137,7 +137,7 @@ def donation(request):
         form=donateform.Donate(request.POST)
         if form.is_valid():
             donation_type=form.cleaned_data.get('donation_type')
-            request.session['donation_num']=form.cleaned_data.get('number')
+            request.session['donation_num']=form.cleaned_data.get('number_of_items')
             request.session['donation_amount']=form.cleaned_data.get('amount')
             donation=form.save()
             donation_id=donation.pk
@@ -161,29 +161,29 @@ def donation_process(request):
             #'amount': amount,
             'item_name': 'Donation',
             'invoice': str(donation_id),
-            'currency_code': 'SGD',
+            'currency_code': 'USD',
             'notify_url': 'http://{}{}'.format(host, reverse('paypal-ipn')),
             'return_url': 'http://{}{}'.format(host, reverse('donation_done')),
             'cancel_return': 'http://{}{}'.format(host, reverse('donation_canceled')),
         }
     if donationtype == 'item1':
-        donation.amount = donationnum*75
+        donation.your_donation = donationnum*75
         donation.save()
         paypal_dict['amount']=donationnum*75
     elif donationtype == 'item2':
-        donation.amount = donationnum*100
+        donation.your_donation = donationnum*100
         donation.save()
         paypal_dict['amount']=donationnum*100
     elif donationtype == 'item3':
-        donation.amount = donationnum*125
+        donation.your_donation = donationnum*125
         donation.save()
         paypal_dict['amount']=donationnum*125
     elif donationtype == 'item4':
-        donation.amount = donationnum*150
+        donation.your_donation = donationnum*150
         donation.save()
         paypal_dict['amount']=donationnum*150
     elif donationtype == 'general':
-        donation.amount = donationamount
+        donation.your_donation = donationamount
         donation.save()
         paypal_dict['amount']=donationamount
     form = PayPalPaymentsForm(initial=paypal_dict)

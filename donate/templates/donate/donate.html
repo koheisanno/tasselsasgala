@@ -3,8 +3,8 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>TASSEL Gala - Purchase</title>
-        <meta name="description" content="purchase page" />
+        <title>TASSEL Gala - Donate</title>
+        <meta name="description" content="donation page" />
         <meta name="keywords" content="website keywords, website keywords" />
         <meta name='viewport' content='width=device-width, inital-scale=1' />
         <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
@@ -25,18 +25,86 @@
                 $("#id_donation_type").on('change', function() {
                     var donations=$(this).val();
                     if (donations=='general'){
+                        var amount=$('#id_your_donation').val();
                         $('#number').css({'display': 'none'});
                         $('#amount').css({'display': 'block'});
+                        $('#item1').css({'display': 'none'});
+                        $('#item2').css({'display': 'none'});
+                        $('#item3').css({'display': 'none'});
+                        $('#item4').css({'display': 'none'});
+                        $('#general').css({'display': 'block'});
+                        $('#cost h3').html("Your donation: $" + amount + ".00");
                     }
-                    else{
+                    else if (donations=='item1'){
+                        var number=$("#id_number_of_items").val();
                         $('#number').css({'display': 'block'});
                         $('#amount').css({'display': 'none'});
+                        $('#item1').css({'display': 'block'});
+                        $('#item2').css({'display': 'none'});
+                        $('#item3').css({'display': 'none'});
+                        $('#item4').css({'display': 'none'});
+                        $('#general').css({'display': 'none'});
+                        $('#cost h3').html("Your donation: $" + number*75 + ".00");
+                    }
+                    else if (donations=='item2'){
+                        var number=$("#id_number_of_items").val();
+                        $('#number').css({'display': 'block'});
+                        $('#amount').css({'display': 'none'});
+                        $('#item1').css({'display': 'none'});
+                        $('#item2').css({'display': 'block'});
+                        $('#item3').css({'display': 'none'});
+                        $('#item4').css({'display': 'none'});
+                        $('#general').css({'display': 'none'});
+                        $('#cost h3').html("Your donation: $" + number*100 + ".00");
+                    }
+                    else if (donations=='item3'){
+                        var number=$("#id_number_of_items").val();
+                        $('#number').css({'display': 'block'});
+                        $('#amount').css({'display': 'none'});
+                        $('#item1').css({'display': 'none'});
+                        $('#item2').css({'display': 'none'});
+                        $('#item3').css({'display': 'block'});
+                        $('#item4').css({'display': 'none'});
+                        $('#general').css({'display': 'none'});
+                        $('#cost h3').html("Your donation: $" + number*125 + ".00");
+                    }
+                    else if (donations=='item4'){
+                        var number=$("#id_number_of_items").val();
+                        $('#number').css({'display': 'block'});
+                        $('#amount').css({'display': 'none'});
+                        $('#item1').css({'display': 'none'});
+                        $('#item2').css({'display': 'none'});
+                        $('#item3').css({'display': 'none'});
+                        $('#item4').css({'display': 'block'});
+                        $('#general').css({'display': 'none'});
+                        $('#cost h3').html("Your donation: $" + number*150 + ".00");
+                    }
+                });
+                $("#id_your_donation").on('change', function() {
+                    var amount=$(this).val();
+                    $('#cost h3').html("Your donation: $" + amount + ".00");
+                });
+                $("#id_number_of_items").on('change', function() {
+                    var donations=$("#id_donation_type").val();
+                    var number=$(this).val();
+                    if (donations=='item1'){
+                        $('#cost h3').html("Your donation: $" + number*75 + ".00");
+                    }
+                    else if (donations=='item2'){
+                        $('#cost h3').html("Your donation: $" + number*100 + ".00");
+                    }
+                    else if (donations=='item3'){
+                        $('#cost h3').html("Your donation: $" + number*125 + ".00");
+                    }
+                    else if (donations=='item4'){
+                        $('#cost h3').html("Your donation: $" + number*150 + ".00");
                     }
                 });
             });
         </script>
     </head>
     <body>
+        <img src="{% static 'event/donate.jpg' %}" class='img-responsive' id='banner' alt='banner'>
         <a href="{% url 'event-home' %}"><img src="{% static 'event/tassel_logo.png' %}" id='top-2'></a>
         <div id="header">
             <a href="{% url 'event-home' %}"><img src="{% static 'event/tassel_logo.png' %}" class='img-responsive' id='top'></a>
@@ -46,18 +114,36 @@
                 <li class='selected'><a href="https://secure.squarespace.com/checkout/donate?donatePageId=5892759d6a49632fcab4171a&ss_cid=3832ac65-17c9-417a-a7fd-9667bda7ae65&ss_cvisit=1571044001046&ss_cvr=0a3546fe-4328-4da5-96a8-9b287e8adc88%7C1571044000888%7C1571044000888%7C1571044000888%7C1" target="_blank" id='current'>Donate</a></li>
             </ul>
         </div>
-        <div id="site_content">
-            <h2>DONATE</h2>
+        <div id="donation_form">
+            <h1>DONATION</h1>
             <form method="post">
                 {% csrf_token %}
-                <div id='selection'>
+                <div id='selection' class='form'>
                     {{ form.donation_type|as_crispy_field }}
                 </div>
-                <div id='number'>
-                    {{ form.number|as_crispy_field }}
+                <div id='item1'>
+                    <h3>Your donation will help ... item1</h3>
                 </div>
-                <div id='amount'>
-                    {{ form.amount|as_crispy_field }}
+                <div id='item2'>
+                    <h3>Your donation will help ... item2</h3>
+                </div>
+                <div id='item3'>
+                    <h3>Your donation will help ... item3</h3>
+                </div>
+                <div id='item4'>
+                    <h3>Your donation will help ... item4</h3>
+                </div>
+                <div id='general'>
+                    <h3>Your donation will be used for whatever is needed the most.</h3>
+                </div>
+                <div id='number' class='form'>
+                    {{ form.number_of_items|as_crispy_field }}
+                </div>
+                <div id='amount' class='form'>
+                    {{ form.your_donation|as_crispy_field }}
+                </div>
+                <div id='cost'>
+                    <h3>Your donation: $0.00</h3>
                 </div>
                 <input type='submit' name='donations' value='Proceed to Donation'>
             </form>

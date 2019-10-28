@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'paypal.standard.ipn',
-    #'storages',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -130,7 +130,7 @@ STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 
 #DISABLE_COLLECTSTATIC=1
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'

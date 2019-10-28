@@ -3,7 +3,7 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>TASSEL Gala - Purchase</title>
+        {% block title %} {% endblock title %}
         <meta name="description" content="purchase page" />
         <meta name="keywords" content="website keywords, website keywords" />
         <meta name='viewport' content='width=device-width, inital-scale=1' />
@@ -24,7 +24,6 @@
                 });
             });     
         </script>
-        {% block script %} {% endblock script %}
     </head>
     <body>
         <a href="{% url 'event-home' %}"><img src="{% static 'event/tassel_logo.png' %}" id='top-2'></a>

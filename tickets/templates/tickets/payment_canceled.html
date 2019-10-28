@@ -1,6 +1,9 @@
 {% extends "tickets/contentbase.html" %}
 {% load static %}
 {% load crispy_forms_tags %}
+{% block title %}
+<title>TASSEL Gala - Purchase</title>
+{% endblock title %}
 {% block menu %}
 <li class="not-selected"><a href="{% url 'event-home' %}" class='not-current'>Home</a></li>
 <li class='selected'><a href="{% url 'buy' %}" id='current'>Tickets</a></li>

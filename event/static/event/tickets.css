@@ -88,7 +88,7 @@ a:hover
   height: auto;
 }
 #top-2{
-    display: block;
+    display: none;
     width: 200px;
     margin: 30px auto;
   }
@@ -207,6 +207,7 @@ ul#menu li:hover
   width: 100%;
   height: 150px;
   background: rgb(14, 14, 14);
+  float:left;
 }
 
 #footercontent{
@@ -230,6 +231,46 @@ ul#menu li:hover
   display:none;
 }
 #amount{
+  display:block;
+}
+.form{
+  width: 50%;
+  margin: 0 auto;
+}
+#banner{
+  width:100%;
+  float:right;
+}
+#donation_form{
+  display:block;
+  position: absolute;
+  top: 200px;
+  left: 260px;
+  width: 430px;
+  background: rgba(33, 33, 33, 0.6);
+}
+#donation_form h1, #donation_form h3{
+  width: 80%;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+#donation_form h1{
+  font-size: 58px;
+}
+#donation_form input[type=submit]{
+  padding:5px 15px; 
+  background:rgb(255, 255, 255); 
+  cursor:pointer;
+  width: 230px;
+  margin: 10px auto 20px;
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+}
+#item1, #item2, #item3, #item4{
+  display:none;
+}
+#general{
   display:block;
 }
 
@@ -281,6 +322,14 @@ ul#menu li:hover
     width: 60%;
     margin-top: 40px;
   }
+  #donation_form{
+    display:block;
+    position: absolute;
+    top: 100px;
+    left: 140px;
+    width: 330px;
+    background: rgba(33, 33, 33, 0.6);
+  }
 }
 
 @media screen and (max-width: 850px){
@@ -290,11 +339,25 @@ ul#menu li:hover
   #home_content{
     padding-top: 0px;
   }
+  #banner{
+    display: none;
+  }
   #header{
       display: none;
   }
   #top-2{
     display: block;
+  }
+  #donation_form{
+    display:block;
+    position: static;
+    width: 100%;
+    margin: 0 auto;
+    background: rgba(33, 33, 33, 0.6);
+  }
+  .form{
+    width: 80%;
+    margin: 0 auto;
   }
   #footercontent img{
     width: 100px;
