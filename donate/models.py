@@ -7,15 +7,15 @@ class Donation(models.Model):
     last_Name = models.CharField(default=" ", max_length=50)
     email = models.EmailField()
     donation_type = models.CharField(default='general', max_length=50, choices=DONATION_TYPE)
-    number_of_items = models.PositiveIntegerField(choices=INT_CHOICES, default='1')
-    your_donation = models.PositiveIntegerField(null=True, blank=True, default='0')
+    number_of_items = models.PositiveIntegerField(choices=INT_CHOICES, default=1)
+    your_donation = models.PositiveIntegerField(null=True, blank=True, default=0)
 
     def __str__(self):
         return (self.donation_type + self.first_Name + " " + self.last_Name)
 
 class DonationCount(models.Model):
-    item1 = models.PositiveIntegerField(default='0')
-    item2 = models.PositiveIntegerField(default='0')
-    item3 = models.PositiveIntegerField(default='0')
-    item4 = models.PositiveIntegerField(default='0')
-    general = models.DecimalField(max_digits=15, decimal_places=2, default='0')
+    item1 = models.PositiveIntegerField(default=0)
+    item2 = models.PositiveIntegerField(default=0)
+    item3 = models.PositiveIntegerField(default=0)
+    item4 = models.PositiveIntegerField(default=0)
+    general = models.PositiveIntegerField(default=0)

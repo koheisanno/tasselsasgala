@@ -138,7 +138,7 @@ def donation(request):
         if form.is_valid():
             donation_type=form.cleaned_data.get('donation_type')
             request.session['donation_num']=form.cleaned_data.get('number_of_items')
-            request.session['donation_amount']=form.cleaned_data.get('amount')
+            request.session['donation_amount']=form.cleaned_data.get('your_donation')
             donation=form.save()
             donation_id=donation.pk
             request.session['donation_type']=donation_type
