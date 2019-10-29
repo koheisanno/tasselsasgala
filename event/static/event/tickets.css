@@ -273,6 +273,23 @@ ul#menu li:hover
 #general{
   display:block;
 }
+#donationInfo{
+  display:none;
+}
+#donationAmountButton{
+  padding:5px 15px; 
+  background:rgb(255, 255, 255); 
+  cursor:pointer;
+  width: 230px;
+  border-radius: 5px; 
+  margin: 10px auto 20px;
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+}
+#paypal{
+  width: 175px;
+  margin: 10px auto 30px;
+}
 
 @media screen and (min-width: 1150px) {
   #photo {

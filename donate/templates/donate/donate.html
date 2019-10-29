@@ -100,6 +100,11 @@
                         $('#cost h3').html("Your donation: $" + number*150 + ".00");
                     }
                 });
+                $("#donationAmountButton").on('click', function() {
+                    $('#donationInfo').css({'display': 'block'});
+                    $('#donationAmount').css({'display': 'none'});
+                    $(this).css({'display': 'none'});
+                });
             });
         </script>
     </head>
@@ -122,35 +127,45 @@
             <h1>DONATION</h1>
             <form method="post">
                 {% csrf_token %}
-                <div id='selection' class='form'>
-                    {{ form.donation_type|as_crispy_field }}
+                <div id='donationAmount'>
+                    <div id='selection' class='form'>
+                        {{ form.donation_type|as_crispy_field }}
+                    </div>
+                    <div id='item1'>
+                        <h3>Your donation will help ... item1</h3>
+                    </div>
+                    <div id='item2'>
+                        <h3>Your donation will help ... item2</h3>
+                    </div>
+                    <div id='item3'>
+                        <h3>Your donation will help ... item3</h3>
+                    </div>
+                    <div id='item4'>
+                        <h3>Your donation will help ... item4</h3>
+                    </div>
+                    <div id='general'>
+                        <h3>Your donation will be used for whatever is needed the most.</h3>
+                    </div>
+                    <div id='number' class='form'>
+                        {{ form.number_of_items|as_crispy_field }}
+                    </div>
+                    <div id='amount' class='form'>
+                        {{ form.your_donation|as_crispy_field }}
+                    </div>
+                    <div id='cost'>
+                        <h3>Your donation: $0.00</h3>
+                    </div>
                 </div>
-                <div id='item1'>
-                    <h3>Your donation will help ... item1</h3>
+                <div id='donationInfo'>
+                    <div class='form'>
+                            {{ form.first_Name|as_crispy_field }}
+                            {{ form.last_Name|as_crispy_field }}
+                            {{ form.email|as_crispy_field }}
+                    </div>
+                    <input type='submit' name='donations' value='Proceed to Donation'>
                 </div>
-                <div id='item2'>
-                    <h3>Your donation will help ... item2</h3>
-                </div>
-                <div id='item3'>
-                    <h3>Your donation will help ... item3</h3>
-                </div>
-                <div id='item4'>
-                    <h3>Your donation will help ... item4</h3>
-                </div>
-                <div id='general'>
-                    <h3>Your donation will be used for whatever is needed the most.</h3>
-                </div>
-                <div id='number' class='form'>
-                    {{ form.number_of_items|as_crispy_field }}
-                </div>
-                <div id='amount' class='form'>
-                    {{ form.your_donation|as_crispy_field }}
-                </div>
-                <div id='cost'>
-                    <h3>Your donation: $0.00</h3>
-                </div>
-                <input type='submit' name='donations' value='Proceed to Donation'>
             </form>
+            <button id='donationAmountButton'>Confirm</button>
         </div>
         <div id="footer">
             <div id='footercontent'>
