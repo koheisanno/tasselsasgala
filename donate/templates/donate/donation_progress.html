@@ -15,6 +15,9 @@
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script type="text/javascript">
             $(document).ready(function(){
+                var int = parseInt($( "#count" ).first().text());
+                var width= (int/80000)*100 + "%";
+                $('#progress').css({'width': width});
                 $(".not-selected").hover(function(){
                     $(this).css({'background': 'rgb(255, 255, 255)'});
                     $('.not-current', this).css({'color': 'black'});
@@ -26,11 +29,6 @@
         </script>
     </head>
     <body>
-        <picture>
-            <source srcset="{% static 'event/donate.webp' %}" type="image/webp" class='img-responsive'>
-            <source srcset="{% static 'event/donate.jpg' %}" type="image/jpeg" class='img-responsive'> 
-            <img src="{% static 'event/donate.jpg' %}" class='img-responsive' id='banner' alt='banner'>
-        </picture>
         <a href="{% url 'event-home' %}"><img src="{% static 'event/tassel_logo.png' %}" id='top-2'></a>
         <div id="header">
             <a href="{% url 'event-home' %}"><img src="{% static 'event/tassel_logo.png' %}" class='img-responsive' id='top'></a>
@@ -40,12 +38,20 @@
                 <li class='selected'><a href="https://secure.squarespace.com/checkout/donate?donatePageId=5892759d6a49632fcab4171a&ss_cid=3832ac65-17c9-417a-a7fd-9667bda7ae65&ss_cvisit=1571044001046&ss_cvr=0a3546fe-4328-4da5-96a8-9b287e8adc88%7C1571044000888%7C1571044000888%7C1571044000888%7C1" target="_blank" id='current'>Donate</a></li>
             </ul>
         </div>
-        <div id="donation_form">
-            <h1>DONATION</h1>
-            <div id='paypal'>
-                {{form.render}}
+        <div id='site_content'>
+            <div id="donation_content">
+                <h1>DONATION PROGRESS</h1>
+                <div class='goals'>
+                    <h4>Achieved: </h4><span class='span'>$</span><span id='count' class='span'>{{ count.general }}</span>
+                </div>
+                <div class='goals' id='right'>
+                    <h4>Goal: </h4><span class='span'>$80000</span>
+                </div>
+                <div id='total'>
+                    <div id='progress'></div>
+                </div>
+                <span class='increment' id='zero'>|0%</span><span class='increment' id='twenty'>|20%</span><span class='increment' id='fourty'>|40%</span><span class='increment' id='sixty'>|60%</span><span class='increment' id='eighty'>|80%</span><span class='increment' id='hundred'>|100%</span>
             </div>
-            <h3>After the payment, please do not close the tab and wait until the browser redirects back to this site.</h3>
         </div>
         <div id="footer">
             <div id='footercontent'>

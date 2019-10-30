@@ -188,3 +188,7 @@ def donation_process(request):
         paypal_dict['amount']=donationamount
     form = PayPalPaymentsForm(initial=paypal_dict)
     return render(request, 'donate/donation_process.html', {'form': form})
+
+def donate_progress(request):
+    donationCounter = DonationCount.objects.first()
+    return render(request, 'donate/donation_progress.html', {'count':donationCounter})

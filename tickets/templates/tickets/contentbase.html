@@ -22,8 +22,9 @@
                     $(this).css({'background': 'transparent'});
                     $('.not-current', this).css({'color': 'rgb(255, 255, 255)'});
                 });
-            });     
+            });
         </script>
+        {% block script %} {% endblock script %}     
     </head>
     <body>
         <a href="{% url 'event-home' %}"><img src="{% static 'event/tassel_logo.png' %}" id='top-2'></a>

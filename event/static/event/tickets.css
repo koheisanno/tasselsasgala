@@ -64,17 +64,6 @@ a, a:hover
 
 a:hover
 { text-decoration: none;}
-
-.left
-{ float: left;
-  width: auto;
-  margin-right: 10px;}
-
-.right
-{ float: right; 
-  width: auto;
-  margin-left: 10px;}
-
 /**.center
 { display: block;
   text-align: center;
@@ -201,6 +190,13 @@ ul#menu li:hover
   width: 80%;
   overflow: hidden;
   margin: 0 auto 0 auto;
+  position: relative;
+}
+#donation_content {
+  width: 80%;
+  overflow: visible;
+  margin: 0 auto 0 auto;
+  position: relative;
 }
 
 #footer{
@@ -288,8 +284,56 @@ ul#menu li:hover
 }
 #paypal{
   width: 175px;
-  margin: 10px auto 30px;
+  margin: 10px auto 20px;
 }
+#total{
+  width: 100%;
+  height: 40px;
+  background:red;
+}
+#progress{
+  width: 0%;
+  height: 40px;
+  background: brown;
+}
+/**span{
+  position: absolute;
+  display:block;
+}**/
+.increment{
+  position: absolute;
+  font-size: 25px;
+}
+.span{
+  font-size: 55px;
+}
+#zero{
+  left:0%;
+}
+#twenty{
+  left: 20%;
+}
+#fourty{
+  left: 40%;
+}
+#sixty{
+  left: 60%;
+}
+#eighty{
+  left: 80%;
+}
+#hundred{
+  left: 98%;
+}
+.goals{
+  display: inline-block;
+  margin-bottom: 40px;
+  margin-top: 20px;
+}
+#right{
+  margin-left: 100px;
+}
+
 
 @media screen and (min-width: 1150px) {
   #photo {
