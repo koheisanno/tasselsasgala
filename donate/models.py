@@ -20,6 +20,7 @@ class Donation(models.Model):
     cover_the_transaction_fee=models.BooleanField(default=True)
     complete=models.BooleanField(default=False)
 
+
     def __str__(self):
         return (self.first_Name + " " + self.last_Name)
 

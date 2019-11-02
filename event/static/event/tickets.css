@@ -233,6 +233,11 @@ ul#menu li:hover
   width: 50%;
   margin: 0 auto;
 }
+#fee{
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+}
 #banner{
   width:100%;
   float:right;
@@ -244,6 +249,7 @@ ul#menu li:hover
   left: 260px;
   width: 430px;
   background: rgba(33, 33, 33, 0.6);
+  margin: 0;
 }
 #donation_form h1, #donation_form h3{
   width: 80%;
@@ -271,6 +277,9 @@ ul#menu li:hover
 }
 #donationInfo{
   display:none;
+}
+.explain{
+  margin-bottom:10px;
 }
 #donationAmountButton{
   padding:5px 15px; 
@@ -419,6 +428,11 @@ ul#menu li:hover
   .form{
     width: 80%;
     margin: 0 auto;
+  }
+  #fee{
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
   }
   #footercontent img{
     width: 100px;

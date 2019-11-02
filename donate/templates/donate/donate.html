@@ -131,19 +131,19 @@
                     <div id='selection' class='form'>
                         {{ form.donation_type|as_crispy_field }}
                     </div>
-                    <div id='item1'>
+                    <div id='item1' class='explain'>
                         <h3>Your donation will help ... item1</h3>
                     </div>
-                    <div id='item2'>
+                    <div id='item2' class='explain'>
                         <h3>Your donation will help ... item2</h3>
                     </div>
-                    <div id='item3'>
+                    <div id='item3' class='explain'>
                         <h3>Your donation will help ... item3</h3>
                     </div>
-                    <div id='item4'>
+                    <div id='item4' class='explain'>
                         <h3>Your donation will help ... item4</h3>
                     </div>
-                    <div id='general'>
+                    <div id='general' class='explain'>
                         <h3>Your donation will be used for whatever is needed the most.</h3>
                     </div>
                     <div id='number' class='form'>
@@ -152,13 +152,13 @@
                     <div id='amount' class='form'>
                         {{ form.your_donation|as_crispy_field }}
                     </div>
-                    <div id='fee' class='form'>
+                    <div id='fee'>
                         {{ form.cover_the_transaction_fee|as_crispy_field }}
                     </div>
                 </div>  
-                    <div id='cost'>
-                        <h3>Your donation: $0.00</h3>
-                    </div>
+                <div id='cost'>
+                    <h3>Your donation: $0.00</h3>
+                </div>
                 <div id='donationInfo' class='form'>
                     {{ form.first_Name|as_crispy_field }}
                     {{ form.last_Name|as_crispy_field }}
