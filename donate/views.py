@@ -11,6 +11,7 @@ def donation_done(request):
     donationtype = request.session.get('donation_type')
     donation_id = request.session.get('donation_id')
     donation = Donation.objects.get(pk=donation_id)
+    donation.complete = True
     if donationtype == 'item1':
         DonationCounter = DonationCount.objects.first()
         DonationCounter.item1 += donation.your_donation #should be AFTER IT REDIRECTS
@@ -155,11 +156,12 @@ def donation_process(request):
     donationamount = request.session.get('donation_amount')
     donation_id = request.session.get('donation_id')
     donation = Donation.objects.get(pk=donation_id)
+    fee = donation.cover_the_transaction_fee
     host = request.get_host()
     paypal_dict = {
             'business': settings.PAYPAL_RECEIVER_EMAIL,
             #'amount': amount,
-            'item_name': 'Donation',
+            'item_name': 'SAS-TASSEL Gala Night',
             'invoice': str(donation_id),
             'currency_code': 'USD',
             'notify_url': 'http://{}{}'.format(host, reverse('paypal-ipn')),
@@ -169,23 +171,38 @@ def donation_process(request):
     if donationtype == 'item1':
         donation.your_donation = donationnum*75
         donation.save()
-        paypal_dict['amount']=donationnum*75
+        if fee==True:
+            paypal_dict['amount']=(donationnum*75)/0.976
+        else:
+            paypal_dict['amount']=donationnum*75
     elif donationtype == 'item2':
         donation.your_donation = donationnum*100
         donation.save()
-        paypal_dict['amount']=donationnum*100
+        if fee==True:
+            paypal_dict['amount']=(donationnum*100)/0.976
+        else:
+            paypal_dict['amount']=donationnum*100
     elif donationtype == 'item3':
         donation.your_donation = donationnum*125
         donation.save()
-        paypal_dict['amount']=donationnum*125
+        if fee==True:
+            paypal_dict['amount']=(donationnum*125)/0.976
+        else:
+            paypal_dict['amount']=donationnum*125
     elif donationtype == 'item4':
         donation.your_donation = donationnum*150
         donation.save()
-        paypal_dict['amount']=donationnum*150
+        if fee==True:
+            paypal_dict['amount']=(donationnum*150)/0.976
+        else:
+            paypal_dict['amount']=donationnum*150
     elif donationtype == 'general':
         donation.your_donation = donationamount
         donation.save()
-        paypal_dict['amount']=donationamount
+        if fee==True:
+            paypal_dict['amount']=(donationamount)/0.976
+        else:
+            paypal_dict['amount']=donationamount
     form = PayPalPaymentsForm(initial=paypal_dict)
     return render(request, 'donate/donation_process.html', {'form': form})
 

@@ -103,7 +103,7 @@
                 $("#donationAmountButton").on('click', function() {
                     $('#donationInfo').css({'display': 'block'});
                     $('#donationAmount').css({'display': 'none'});
-                    $(this).css({'display': 'none'});
+                    $('#donationAmountButton').css({'display': 'none'});
                 });
             });
         </script>
@@ -152,16 +152,17 @@
                     <div id='amount' class='form'>
                         {{ form.your_donation|as_crispy_field }}
                     </div>
+                    <div id='fee' class='form'>
+                        {{ form.cover_the_transaction_fee|as_crispy_field }}
+                    </div>
+                </div>  
                     <div id='cost'>
                         <h3>Your donation: $0.00</h3>
                     </div>
-                </div>
-                <div id='donationInfo'>
-                    <div class='form'>
-                            {{ form.first_Name|as_crispy_field }}
-                            {{ form.last_Name|as_crispy_field }}
-                            {{ form.email|as_crispy_field }}
-                    </div>
+                <div id='donationInfo' class='form'>
+                    {{ form.first_Name|as_crispy_field }}
+                    {{ form.last_Name|as_crispy_field }}
+                    {{ form.email|as_crispy_field }}
                     <input type='submit' name='donations' value='Proceed to Donation'>
                 </div>
             </form>

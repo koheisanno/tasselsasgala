@@ -258,7 +258,7 @@ ul#menu li:hover
   padding:5px 15px; 
   background:rgb(255, 255, 255); 
   cursor:pointer;
-  width: 230px;
+  width: 100%;;
   margin: 10px auto 20px;
   display: block;
   font-family: 'Montserrat', sans-serif;

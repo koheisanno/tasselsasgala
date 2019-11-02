@@ -8,10 +8,20 @@ class Donation(models.Model):
     email = models.EmailField()
     donation_type = models.CharField(default='general', max_length=50, choices=DONATION_TYPE)
     number_of_items = models.PositiveIntegerField(choices=INT_CHOICES, default=1)
+    '''number_of_item_1 = models.PositiveIntegerField(choices=INT_CHOICES, default=1)
+    number_of_item_2 = models.PositiveIntegerField(choices=INT_CHOICES, default=1)
+    number_of_item_3 = models.PositiveIntegerField(choices=INT_CHOICES, default=1)
+    number_of_item_4 = models.PositiveIntegerField(choices=INT_CHOICES, default=1)
+    item_1 = models.PositiveIntegerField(default=0)
+    item_2 = models.PositiveIntegerField(default=0)
+    item_3 = models.PositiveIntegerField(default=0)
+    item_4 = models.PositiveIntegerField(default=0)'''
     your_donation = models.PositiveIntegerField(null=True, blank=True, default=0)
+    cover_the_transaction_fee=models.BooleanField(default=True)
+    complete=models.BooleanField(default=False)
 
     def __str__(self):
-        return (self.donation_type + self.first_Name + " " + self.last_Name)
+        return (self.first_Name + " " + self.last_Name)
 
 class DonationCount(models.Model):
     item1 = models.PositiveIntegerField(default=0)
