@@ -264,10 +264,11 @@ ul#menu li:hover
   padding:5px 15px; 
   background:rgb(255, 255, 255); 
   cursor:pointer;
-  width: 100%;;
-  margin: 10px auto 20px;
+  width: 230px;
+  margin: 20px auto 20px;
   display: block;
   font-family: 'Montserrat', sans-serif;
+  display:none;
 }
 #item1, #item2, #item3, #item4{
   display:none;

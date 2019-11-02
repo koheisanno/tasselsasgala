@@ -104,6 +104,7 @@
                     $('#donationInfo').css({'display': 'block'});
                     $('#donationAmount').css({'display': 'none'});
                     $('#donationAmountButton').css({'display': 'none'});
+                    $('#donation_form input[type=submit]').css({'display': 'block'});
                 });
             });
         </script>
@@ -156,15 +157,15 @@
                         {{ form.cover_the_transaction_fee|as_crispy_field }}
                     </div>
                 </div>  
-                <div id='cost'>
-                    <h3>Your donation: $0.00</h3>
-                </div>
                 <div id='donationInfo' class='form'>
                     {{ form.first_Name|as_crispy_field }}
                     {{ form.last_Name|as_crispy_field }}
                     {{ form.email|as_crispy_field }}
-                    <input type='submit' name='donations' value='Proceed to Donation'>
                 </div>
+                <div id='cost'>
+                    <h3>Your donation: $0.00</h3>
+                </div>
+                <input type='submit' name='donations' id='submitDonation' value='Proceed to Donation'>
             </form>
             <button id='donationAmountButton'>Confirm</button>
         </div>
