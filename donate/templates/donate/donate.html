@@ -22,6 +22,9 @@
                     $(this).css({'background': 'transparent'});
                     $('.not-current', this).css({'color': 'rgb(255, 255, 255)'});
                 });
+                $("#id_cover_the_transaction_fee").on('change', function() {
+                    $('#percent').toggleClass('visible');
+                });
                 $("#id_donation_type").on('change', function() {
                     var donations=$(this).val();
                     if (donations=='general'){
@@ -126,6 +129,7 @@
         </div>
         <div id="donation_form">
             <h1>DONATION</h1>
+            <a href="{% url 'donate_progress' %}">How much have we donated?</a>
             <form method="post">
                 {% csrf_token %}
                 <div id='donationAmount'>
@@ -163,7 +167,7 @@
                     {{ form.email|as_crispy_field }}
                 </div>
                 <div id='cost'>
-                    <h3>Your donation: $0.00</h3>
+                    <h3>Your donation: $0.00<span id='percent'> + 2.4%;</span></h3>
                 </div>
                 <input type='submit' name='donations' id='submitDonation' value='Proceed to Donation'>
             </form>

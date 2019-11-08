@@ -209,3 +209,6 @@ def donation_process(request):
 def donate_progress(request):
     donationCounter = DonationCount.objects.first()
     return render(request, 'donate/donation_progress.html', {'count':donationCounter})
+
+def teacher_stories(request):
+    return render(request, 'donate/teacher_stories.html')

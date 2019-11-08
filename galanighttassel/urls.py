@@ -23,6 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^paypal/', include('paypal.standard.ipn.urls')),
     url(r'^donate/$', donate_views.donation, name='donation' ),
+    url(r'^teacher_stories/$', donate_views.teacher_stories, name='teacher_stories' ),
     url(r'^donate_process/$', donate_views.donation_process, name='donation_process' ),
     url(r'^donate_progress/$', donate_views.donate_progress, name='donate_progress' ),
     url(r'^payment_process/$', tickets_views.payment_process, name='payment_process' ),
