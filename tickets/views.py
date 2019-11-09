@@ -31,7 +31,9 @@ def payment_done(request):
     msg.attach_file("media/qrcodes/qr-"+str(the_user.userid)+".jpg")
     msg.send()
     return render(request, 'tickets/payment_done.html')'''
-
+def payment_done(request):
+    return render(request, 'tickets/payment_done.html')
+    
 '''@csrf_exempt
 def payment_canceled(request):
     firstname = request.session.get('first_Name')
