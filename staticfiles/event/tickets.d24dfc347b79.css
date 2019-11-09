@@ -377,6 +377,9 @@ ul#menu li:hover
   top:80px;
   z-index: 5;
 }
+#samath{
+  color:red;
+}
 .fill{
   height: 100px;
   display: block;
