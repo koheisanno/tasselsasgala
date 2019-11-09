@@ -2,6 +2,17 @@
 {% load static %}
 {% block mycss %}
     <link rel="stylesheet" type="text/css" href="{% static 'event/eventmain.css' %}">
+    <script type="text/javascript">
+        $(document).ready(function(){
+          $(".not-selected").hover(function(){
+            $(this).css({'background': 'rgb(255, 255, 255)'});
+            $('.not-current', this).css({'color': 'black'});
+            }, function(){
+            $(this).css({'background': 'transparent'});
+            $('.not-current', this).css({'color': 'rgb(255, 255, 255)'});
+            });
+        });    
+    </script>
 {% endblock mycss %}
 {% block top %}
 <div class='title' id='midmobiletitle'>
