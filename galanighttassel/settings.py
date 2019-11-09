@@ -141,8 +141,8 @@ EMAIL_USE_TLS = True
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 MEDIA_URL = '/media/'
 
-PAYPAL_RECEIVER_EMAIL='testingdjango@business.com'
-PAYPAL_TEST= True
+PAYPAL_RECEIVER_EMAIL='dylan.kim@indieworkscorp.com'
+PAYPAL_TEST= False
 
 #AWS_ACCESS_KEY_ID=os.environ.get('AWS_ACCESS_KEY_ID')
 #AWS_SECRET_ACCESS_KEY=os.environ.get('AWS_SECRET_ACCESS_KEY')

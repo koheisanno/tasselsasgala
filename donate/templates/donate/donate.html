@@ -48,6 +48,7 @@
                         $('#item4').css({'display': 'none'});
                         $('#general').css({'display': 'none'});
                         $('#cost h3').html("Your donation: $" + number*75 + ".00");
+
                     }
                     else if (donations=='item2'){
                         var number=$("#id_number_of_items").val();
@@ -167,7 +168,7 @@
                     {{ form.email|as_crispy_field }}
                 </div>
                 <div id='cost'>
-                    <h3>Your donation: $0.00<span id='percent'> + 2.4%;</span></h3>
+                    <h3>Your donation: $0.00</h3>
                 </div>
                 <input type='submit' name='donations' id='submitDonation' value='Proceed to Donation'>
             </form>

@@ -267,9 +267,6 @@ ul#menu li:hover
   text-align: center;
   font-size: 22px;
 }
-.visible{
-  display: none;
-}
 #donation_form input[type=submit]{
   padding:5px 15px; 
   background:rgb(255, 255, 255); 
