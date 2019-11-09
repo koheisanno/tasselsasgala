@@ -207,13 +207,11 @@ ul#menu li:hover
 
 .selected
 {
-  color:black;
   background: rgb(255, 255, 255);
 }
 
 .not-selected
 {
-  color: rgb(255, 255, 255);
   background: transparent;
 }
 

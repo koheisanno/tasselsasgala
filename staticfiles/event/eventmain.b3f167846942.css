@@ -202,18 +202,16 @@ ul#menu li a
 
 
 ul#menu li:hover
-{ 
+{ color: black;
   background: rgb(255, 255, 255);}
 
 .selected
 {
-  color:black;
   background: rgb(255, 255, 255);
 }
 
 .not-selected
 {
-  color: rgb(255, 255, 255);
   background: transparent;
 }
 

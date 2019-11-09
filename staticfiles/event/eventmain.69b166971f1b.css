@@ -201,19 +201,17 @@ ul#menu li a
   background: transparent;} 
 
 
-ul#menu li:hover
+/**ul#menu li:hover
 { 
-  background: rgb(255, 255, 255);}
+  background: rgb(255, 255, 255);}**/
 
 .selected
 {
-  color:black;
   background: rgb(255, 255, 255);
 }
 
 .not-selected
 {
-  color: rgb(255, 255, 255);
   background: transparent;
 }
 
