@@ -160,13 +160,12 @@ def donation_process(request):
     host = request.get_host()
     paypal_dict = {
             'business': settings.PAYPAL_RECEIVER_EMAIL,
-            #'amount': amount,
             'item_name': 'SAS-TASSEL Gala Night',
             'invoice': str(donation_id),
             'currency_code': 'USD',
-            'notify_url': 'http://{}{}'.format(host, reverse('paypal-ipn')),
-            'return_url': 'http://{}{}'.format(host, reverse('donation_done')),
-            'cancel_return': 'http://{}{}'.format(host, reverse('donation_canceled')),
+            'notify_url': 'https://{}{}'.format(host, reverse('paypal-ipn')),
+            'return_url': 'https://{}{}'.format(host, reverse('donation_done')),
+            'cancel_return': 'https://{}{}'.format(host, reverse('donation_canceled')),
         }
     if donationtype == 'item1':
         donation.your_donation = donationnum*75
