@@ -448,6 +448,9 @@ ul#menu li:hover
     width: 330px;
     background: rgba(33, 33, 33, 0.6);
   }
+  .span{
+    font-size: 35px;
+  }
 }
 
 @media screen and (max-width: 850px){
@@ -496,8 +499,5 @@ ul#menu li:hover
   #footercontent{
     width: 90%;
     margin: 0 auto;
-  }
-  .span{
-    font-size: 40px;
   }
 }
