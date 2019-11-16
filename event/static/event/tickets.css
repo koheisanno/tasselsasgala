@@ -321,6 +321,7 @@ ul#menu li:hover
 .increment{
   position: absolute;
   font-size: 25px;
+  display:inline;
 }
 .span{
   font-size: 55px;
@@ -505,5 +506,8 @@ ul#menu li:hover
   }
   #right{
     margin-left: 40px;
+  }
+  .increment{
+    display:none;
   }
 }
