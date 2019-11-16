@@ -1,11 +1,11 @@
 from django.db import models
 INT_CHOICES = [(x, x) for x in range(1, 60)]
-DONATION_TYPE = (('general', 'general'), ('item1', 'item1 - $75 per ?'), ('item2', 'item 2 - $100 per ?'), ('item3', 'item 3 - $125 per ?'), ('item4', 'item 4 - $150 per ?'))
+DONATION_TYPE = (('general', 'general'), ('item1', 'Student Transportation'), ('item2', 'School Materials'), ('item3', 'School Building'), ('item4', 'Medicine'))
 
 class Donation(models.Model):
-    first_Name = models.CharField(default=" ", max_length=50)
-    last_Name = models.CharField(default=" ", max_length=50)
-    email = models.EmailField()
+    first_Name = models.CharField(default="first", max_length=50)
+    last_Name = models.CharField(default="last", max_length=50)
+    email = models.EmailField(default="email@gmail.com")
     donation_type = models.CharField(default='general', max_length=50, choices=DONATION_TYPE)
     number_of_items = models.PositiveIntegerField(choices=INT_CHOICES, default=1)
     '''number_of_item_1 = models.PositiveIntegerField(choices=INT_CHOICES, default=1)
@@ -23,6 +23,13 @@ class Donation(models.Model):
 
     def __str__(self):
         return (self.first_Name + " " + self.last_Name)
+    
+    def save(self,*args, **kwargs):
+        super().save(*args, **kwargs)
+        donationCount = DonationCount.objects.first()
+        donationCount.general+=self.your_donation
+        donationCount.save()
+
 
 class DonationCount(models.Model):
     item1 = models.PositiveIntegerField(default=0)

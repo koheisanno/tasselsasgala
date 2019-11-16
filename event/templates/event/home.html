@@ -41,21 +41,21 @@
                         <h4>TASSEL SAS Presents:</h4>
                         <h1 id='bigtitle'>TASSEL GALA DINNER 2019</h1>
                         <h3>SUNDAY, NOV 17 | 6:30PM</h3>
-                        <a href="{% url 'event-home' %}" class='button' id='button1'>Purchase a Ticket</a>
+                        <a href="{% url 'buy' %}" class='button' id='button1'>Purchase a Ticket</a>
                         <a href="https://www.tasselcambodia.org/donation-form" target="_blank" class='button' id='button4'>Donate</a>
                     </div>
                 </div>
                 <img src="{% static 'event/tassel_logo.png' %}" class='img-responsive' id='top'>
                 <ul id="menu">
                     <li class="selected"><a href="{% url 'event-home' %}" id='current'>Home</a></li>
-                    <li class='not-selected'><a href="{% url 'event-home' %}" class='not-current'>Tickets</a></li>
+                    <li class='not-selected'><a href="{% url 'buy' %}" class='not-current'>Tickets</a></li>
                     <li class='not-selected'><a href="https://www.tasselcambodia.org/donation-form" target="_blank" class='not-current'>Donate</a></li>
                 </ul>
         </div>
     </div>
     <div id="site_content">
-            <a href="{% url 'event-home' %}" class='button' id='button2'>Tickets</a>
-            <a href="https://secure.squarespace.com/checkout/donate?donatePageId=5892759d6a49632fcab4171a&ss_cid=3832ac65-17c9-417a-a7fd-9667bda7ae65&ss_cvisit=1571044001046&ss_cvr=0a3546fe-4328-4da5-96a8-9b287e8adc88%7C1571044000888%7C1571044000888%7C1571044000888%7C1" target="_blank" class='button' id='button3'>Donate</a>
+            <a href="{% url 'buy' %}" class='button' id='button2'>Tickets</a>
+            <a href="https://www.tasselcambodia.org/donation-form" target="_blank" class='button' id='button3'>Donate</a>
             <div id='detail'>
                 <h4>Date:</h4>
                 <h3>November 17th, 2019 | 6:30PM</h3>

@@ -6,20 +6,20 @@
 {% endblock title %}
 {% block menu %}
 <li class="not-selected"><a href="{% url 'event-home' %}" class='not-current'>Home</a></li>
-<li class='selected'><a href="{% url 'event-home' %}" id='current'>Tickets</a></li>
+<li class='selected'><a href="{% url 'buy' %}" id='current'>Tickets</a></li>
 <li class='not-selected'><a href="https://www.tasselcambodia.org/donation-form" target="_blank" class='not-current'>Donate</a></li>
 {% endblock menu %}
 
 {% block content %}
 <div id="other_content">
-    <h2>TICKETS PURCHASE</h2>
     <div>
-        <form method ='POST'>
+        <!--<form method ='POST'>
             {% csrf_token %}
             {{form|crispy}}
             <p id='warning'>After completing payment, more information regarding the gala will be sent to your email on the Friday after you purchase your ticket. In the meantime, kindly check your email to ensure that a payment confirmation email has been sent to you.</p>
             <input type='submit' value='Proceed to payment'>
-        </form>
+        </form>-->
+        <h2>Ticket sales have ended. Please contact tasselsas@gmail.com for inquiries.</h2>
     </div>
 </div>
 {% endblock content %}
