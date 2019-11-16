@@ -503,4 +503,7 @@ ul#menu li:hover
   #donation_content {
     width: 95%;
   }
+  #right{
+    margin-left: 40px;
+  }
 }
