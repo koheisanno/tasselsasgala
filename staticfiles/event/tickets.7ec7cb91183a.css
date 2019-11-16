@@ -498,9 +498,8 @@ ul#menu li:hover
     margin: 0 auto;
   }
   .span{
-    font-size: 36px;
+    font-size: 30px;
   }
   #donation_content {
-    width: 95%;
-  }
+    width: 90%;
 }
